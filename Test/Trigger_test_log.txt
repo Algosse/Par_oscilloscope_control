@@ -1,0 +1,30 @@
+Connection to oscilloscope : SUCCESS
+Trigger position : FAILED --> 1.5000 --> 0.0
+Trigger source channel 0 :
+--> Trigger coupling 0 :
+--> Trigger slope : 0SUCCESS SUCCESS SUCCESS
+--> Trigger slope : 1SUCCESS SUCCESS SUCCESS
+--> Trigger coupling 1 :
+--> Trigger slope : 0SUCCESS SUCCESS SUCCESS
+--> Trigger slope : 1SUCCESS SUCCESS SUCCESS
+Trigger source channel 1 :
+--> Trigger coupling 0 :
+--> Trigger slope : 0SUCCESS SUCCESS SUCCESS
+--> Trigger slope : 1SUCCESS SUCCESS SUCCESS
+--> Trigger coupling 1 :
+--> Trigger slope : 0SUCCESS SUCCESS SUCCESS
+--> Trigger slope : 1SUCCESS SUCCESS SUCCESS
+Trigger source channel 2 :
+--> Trigger coupling 0 :
+--> Trigger slope : 0SUCCESS SUCCESS SUCCESS
+--> Trigger slope : 1SUCCESS SUCCESS SUCCESS
+--> Trigger coupling 1 :
+--> Trigger slope : 0SUCCESS SUCCESS SUCCESS
+--> Trigger slope : 1SUCCESS SUCCESS SUCCESS
+Trigger source channel 3 :
+--> Trigger coupling 0 :
+--> Trigger slope : 0SUCCESS SUCCESS SUCCESS
+--> Trigger slope : 1SUCCESS SUCCESS SUCCESS
+--> Trigger coupling 1 :
+--> Trigger slope : 0SUCCESS SUCCESS SUCCESS
+--> Trigger slope : 1SUCCESS SUCCESS SUCCESS

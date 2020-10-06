@@ -1,0 +1,1369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>681</width>
+    <height>593</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Oscilloscope Control</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="W_onglets">
+    <property name="geometry">
+     <rect>
+      <x>-4</x>
+      <y>-1</y>
+      <width>541</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="acq_tab">
+     <attribute name="title">
+      <string>Acquisition settup</string>
+     </attribute>
+     <widget class="QGroupBox" name="Vertical">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>210</y>
+        <width>481</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Vertical</string>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>431</width>
+         <height>231</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="channel1">
+          <property name="title">
+           <string>Channel 1</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="layoutWidget_4">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>40</y>
+             <width>178</width>
+             <height>48</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="lbl_ch1_pos">
+              <property name="text">
+               <string>Position</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="ch1_pos">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="lbl_ch1_sca">
+              <property name="text">
+               <string>Scale</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="ch1_sca">
+              <property name="accessibleName">
+               <string/>
+              </property>
+              <item>
+               <property name="text">
+                <string>2.0E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>5.0E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>20E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>50E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>100E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>200E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>500E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="channel2">
+          <property name="title">
+           <string>Channel 2</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="layoutWidget_3">
+           <property name="geometry">
+            <rect>
+             <x>18</x>
+             <y>40</y>
+             <width>178</width>
+             <height>48</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="0">
+             <widget class="QLabel" name="lbl_ch2_pos">
+              <property name="text">
+               <string>Position</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="ch2_pos">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="lbl_ch2_sca">
+              <property name="text">
+               <string>Scale</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="ch2_sca">
+              <property name="accessibleName">
+               <string/>
+              </property>
+              <item>
+               <property name="text">
+                <string>2.0E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>5.0E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>20E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>50E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>100E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>200E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>500E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="channel3">
+          <property name="title">
+           <string>Channel 3</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="layoutWidget_2">
+           <property name="geometry">
+            <rect>
+             <x>18</x>
+             <y>40</y>
+             <width>178</width>
+             <height>48</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <widget class="QLabel" name="lbl_ch3_pos">
+              <property name="text">
+               <string>Position</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="ch3_pos">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="lbl_ch3_sca">
+              <property name="text">
+               <string>Scale</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="ch3_sca">
+              <property name="accessibleName">
+               <string/>
+              </property>
+              <item>
+               <property name="text">
+                <string>2.0E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>5.0E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>20E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>50E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>100E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>200E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>500E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QGroupBox" name="channel4">
+          <property name="title">
+           <string>Channel 4</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="layoutWidget_5">
+           <property name="geometry">
+            <rect>
+             <x>18</x>
+             <y>40</y>
+             <width>178</width>
+             <height>48</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <widget class="QLabel" name="lbl_ch4_pos">
+              <property name="text">
+               <string>Position</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="ch4_pos">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="lbl_ch4_sca">
+              <property name="text">
+               <string>Scale</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="ch4_sca">
+              <property name="accessibleName">
+               <string/>
+              </property>
+              <item>
+               <property name="text">
+                <string>2.0E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>5.0E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>20E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>50E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>100E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>200E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>500E-3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="Horizontal">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>241</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Horizontal</string>
+      </property>
+      <widget class="QWidget" name="layoutWidget_6">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>191</width>
+         <height>74</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0">
+         <widget class="QLabel" name="lbl_hor_pos">
+          <property name="text">
+           <string>Position</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="hor_pos">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lbl_hor_sca">
+          <property name="text">
+           <string>Scale</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="hor_sca">
+          <item>
+           <property name="text">
+            <string>2.5E-9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5E-9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10E-9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>20E-9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>40E-9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>80E-9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>200E-9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>400E-9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>1E-6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2E-6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4E-6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10E-6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>20E-6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>40E-6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>100E-6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>200E-6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>400E-6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>1E-3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2E-3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4E-3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10E-3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>20E-3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>40E-3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>100E-3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>200E-3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>400E-3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>20</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>40</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lbl_hor_res">
+          <property name="text">
+           <string>Resolution</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="hor_res"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="Trigger">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>40</y>
+        <width>221</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Trigger</string>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>182</width>
+         <height>126</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="trig_lvl">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="lbl_trig_sou">
+          <property name="text">
+           <string>Source</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="trig_cou">
+          <property name="accessibleName">
+           <string/>
+          </property>
+          <item>
+           <property name="text">
+            <string>DC</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>AC</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="lbl_trig_lvl">
+          <property name="text">
+           <string>Level</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="trig_slo">
+          <property name="accessibleName">
+           <string/>
+          </property>
+          <item>
+           <property name="text">
+            <string>RISe</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>FALL</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lbl_trig_slo">
+          <property name="text">
+           <string>Slope</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="trig_sou">
+          <property name="accessibleName">
+           <string/>
+          </property>
+          <item>
+           <property name="text">
+            <string>CH1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>CH2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>CH3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>CH4</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lbl_trig_cou">
+          <property name="text">
+           <string>Coupling</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>27</x>
+        <y>10</y>
+        <width>471</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="lbl_osc_name">
+         <property name="text">
+          <string>Oscilloscope name</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="osc_name">
+         <property name="text">
+          <string>TCPIP::150.197.100.17::gpib0,1::INSTR</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="wfm_tab">
+     <attribute name="title">
+      <string>Waveform</string>
+     </attribute>
+     <widget class="QGroupBox" name="wfm_grp">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>231</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Waveform parameters</string>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>30</y>
+         <width>188</width>
+         <height>119</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="2" column="1">
+         <widget class="QComboBox" name="data_encoding">
+          <item>
+           <property name="text">
+            <string>ASCII</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="data_stop">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QCheckBox" name="check_data_start">
+          <property name="text">
+           <string>Start</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QCheckBox" name="check_data_stop">
+          <property name="text">
+           <string>Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lbl_data_encoding">
+          <property name="text">
+           <string>Encoding</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="data_start">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="data_sou">
+          <item>
+           <property name="text">
+            <string>CH1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>CH2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>CH3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>CH4</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lbl_data_sou">
+          <property name="text">
+           <string>Data source</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="acq_grp">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>210</y>
+        <width>491</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Acquisition</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <widget class="QComboBox" name="acq_script">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>20</y>
+         <width>161</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="parameter_edit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>461</width>
+         <height>151</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_acq">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>220</y>
+         <width>101</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Start acquisition</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lbl_acq_script">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Acquisition Script</string>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="progressBar">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>220</y>
+         <width>341</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="log_tab">
+     <attribute name="title">
+      <string>Log</string>
+     </attribute>
+     <widget class="QTextEdit" name="log">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>491</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="apply_option_grp">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>250</y>
+      <width>121</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Apply option</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>91</width>
+       <height>88</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QCheckBox" name="check_vert_app">
+        <property name="text">
+         <string>Vertical</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="check_hor_app">
+        <property name="text">
+         <string>Horizontal</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="check_trig_app">
+        <property name="text">
+         <string>Trigger</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="check_wfm_app">
+        <property name="text">
+         <string>Waveform</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>29</y>
+      <width>119</width>
+      <height>170</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="btn_connect">
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_disconnect">
+       <property name="text">
+        <string>disconnect</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_ld_file">
+       <property name="text">
+        <string>Load from file</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_ld_osc">
+       <property name="text">
+        <string>Load from Oscilloscope</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_save">
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_apply">
+       <property name="text">
+        <string>Apply</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>520</y>
+      <width>601</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="lbl_cmd">
+       <property name="text">
+        <string>Command</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="cmd_line">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_send_cmd">
+       <property name="text">
+        <string>Send</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>681</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <widget class="QMenu" name="menuLoad">
+     <property name="title">
+      <string>Load</string>
+     </property>
+     <addaction name="actionLoad_from_file_2"/>
+     <addaction name="actionLoad_from_oscilloscope"/>
+    </widget>
+    <widget class="QMenu" name="menuOscilloscope">
+     <property name="title">
+      <string>Oscilloscope</string>
+     </property>
+     <addaction name="actionConnect"/>
+     <addaction name="actionDisconnect"/>
+    </widget>
+    <addaction name="menuOscilloscope"/>
+    <addaction name="menuLoad"/>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <widget class="QMenu" name="menuGPIB_command">
+     <property name="title">
+      <string>GPIB command</string>
+     </property>
+     <addaction name="actionAcquisition"/>
+     <addaction name="actionAlias"/>
+     <addaction name="actionCalibrate"/>
+     <addaction name="actionCursor"/>
+     <addaction name="actionDiagnostic"/>
+     <addaction name="actionDisplay"/>
+     <addaction name="actionFile_System"/>
+     <addaction name="actionHardcopy"/>
+     <addaction name="actionHistogram"/>
+     <addaction name="actionHorizontal"/>
+     <addaction name="actionMath"/>
+     <addaction name="actionMeasurement"/>
+     <addaction name="actionMiscellaneous"/>
+     <addaction name="actionSave_and_Recall"/>
+     <addaction name="actionStatus_and_Error"/>
+     <addaction name="actionTrigger"/>
+     <addaction name="actionVertical"/>
+     <addaction name="actionWaveform_Transfert"/>
+     <addaction name="actionZoom"/>
+    </widget>
+    <addaction name="menuGPIB_command"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionLoad_from_oscilloscope">
+   <property name="text">
+    <string>Load from oscilloscope</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionLoad_from_file">
+   <property name="text">
+    <string>Load from file</string>
+   </property>
+  </action>
+  <action name="actionLoad_from_file_2">
+   <property name="text">
+    <string>Load from file</string>
+   </property>
+  </action>
+  <action name="actionConnect">
+   <property name="text">
+    <string>Connect</string>
+   </property>
+  </action>
+  <action name="actionDisconnect">
+   <property name="text">
+    <string>Disconnect</string>
+   </property>
+  </action>
+  <action name="actionAlias_commands">
+   <property name="text">
+    <string>Alias commands</string>
+   </property>
+  </action>
+  <action name="actionAcquisition">
+   <property name="text">
+    <string>Acquisition</string>
+   </property>
+  </action>
+  <action name="actionAlias">
+   <property name="text">
+    <string>Alias</string>
+   </property>
+  </action>
+  <action name="actionCalibrate">
+   <property name="text">
+    <string>Calibrate</string>
+   </property>
+  </action>
+  <action name="actionCursor">
+   <property name="text">
+    <string>Cursor</string>
+   </property>
+  </action>
+  <action name="actionDiagnostic">
+   <property name="text">
+    <string>Diagnostic</string>
+   </property>
+  </action>
+  <action name="actionDisplay">
+   <property name="text">
+    <string>Display</string>
+   </property>
+  </action>
+  <action name="actionFile_System">
+   <property name="text">
+    <string>File System</string>
+   </property>
+  </action>
+  <action name="actionHardcopy">
+   <property name="text">
+    <string>Hardcopy</string>
+   </property>
+  </action>
+  <action name="actionHistogram">
+   <property name="text">
+    <string>Histogram</string>
+   </property>
+  </action>
+  <action name="actionHorizontal">
+   <property name="text">
+    <string>Horizontal</string>
+   </property>
+  </action>
+  <action name="actionMath">
+   <property name="text">
+    <string>Math</string>
+   </property>
+  </action>
+  <action name="actionMeasurement">
+   <property name="text">
+    <string>Measurement</string>
+   </property>
+  </action>
+  <action name="actionSave_and_Recall">
+   <property name="text">
+    <string>Save and Recall</string>
+   </property>
+  </action>
+  <action name="actionTrigger">
+   <property name="text">
+    <string>Trigger</string>
+   </property>
+  </action>
+  <action name="actionVertical">
+   <property name="text">
+    <string>Vertical</string>
+   </property>
+  </action>
+  <action name="actionWaveform_Transfert">
+   <property name="text">
+    <string>Waveform Transfert</string>
+   </property>
+  </action>
+  <action name="actionZoom">
+   <property name="text">
+    <string>Zoom</string>
+   </property>
+  </action>
+  <action name="actionMiscellaneous">
+   <property name="text">
+    <string>Miscellaneous</string>
+   </property>
+  </action>
+  <action name="actionStatus_and_Error">
+   <property name="text">
+    <string>Status and Error</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

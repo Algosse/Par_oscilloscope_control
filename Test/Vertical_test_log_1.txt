@@ -1,0 +1,11 @@
+Connection to oscilloscope : SUCCESS
+Channel 1 position : SUCCESS
+Channel 1 scale 0 : SUCCESS
+Channel 1 scale 1 : SUCCESS
+Channel 1 scale 2 : SUCCESS
+Channel 1 scale 3 : SUCCESS
+Channel 1 scale 4 : SUCCESS
+Channel 1 scale 5 : SUCCESS
+Channel 1 scale 6 : SUCCESS
+Channel 1 scale 7 : SUCCESS
+Channel 1 scale 8 : SUCCESS

@@ -1,0 +1,1406 @@
+Connection to oscilloscope : SUCCESS
+Horizontal position : SUCCESS
+Test for 1 activated channel :
+Test Scale 0 :
+Resolution to test : 1
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Scale 1 :
+Resolution to test : 2
+Test Résolution 0 --> SUCCESS  FAILED --> 20000000000.0 --> 1.00E+10
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Scale 2 :
+Resolution to test : 3
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  FAILED --> 5000000000.0 --> 1.00E+10
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Scale 3 :
+Resolution to test : 3
+Test Résolution 0 --> SUCCESS  FAILED --> 2500000000.0 --> 5.00E+09
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Scale 4 :
+Resolution to test : 4
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Scale 5 :
+Resolution to test : 5
+Test Résolution 0 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 250000000.0 --> 6.25E+08
+Test Résolution 1 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 1250000000.0 --> 2.50E+09
+Test Résolution 2 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 2500000000.0 --> 5.00E+09
+Test Résolution 3 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 5000000000.0 --> 1.00E+10
+Test Résolution 4 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 10000000000.0 --> 2.00E+10
+Test Scale 6 :
+Resolution to test : 6
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Scale 7 :
+Resolution to test : 7
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Scale 8 :
+Resolution to test : 8
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Scale 9 :
+Resolution to test : 9
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Scale 10 :
+Resolution to test : 10
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Scale 11 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 12 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 13 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 14 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 15 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 16 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 17 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  FAILED --> 125000000.0 --> 1.00E+08
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 18 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  FAILED --> 125000000.0 --> 1.00E+08
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 19 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 20 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  FAILED --> 12500000.0 --> 1.00E+07
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 21 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  FAILED --> 12500000.0 --> 1.00E+07
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 22 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 23 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  FAILED --> 1250000.0 --> 1.00E+06
+Test Résolution 10 --> SUCCESS  FAILED --> 2500000.0 --> 2.00E+06
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  FAILED --> 7812500.0 --> 7.81E+06
+Test Scale 24 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  FAILED --> 1250000.0 --> 1.00E+06
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  FAILED --> 3906300.0 --> 3.91E+06
+Test Scale 25 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 26 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  FAILED --> 125000.0 --> 1.00E+05
+Test Résolution 10 --> SUCCESS  FAILED --> 250000.0 --> 2.00E+05
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  FAILED --> 781250.0 --> 7.81E+05
+Test Scale 27 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  FAILED --> 125000.0 --> 1.00E+05
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 28 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 29 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  FAILED --> 25000.0 --> 2.00E+04
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 30 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  FAILED --> 12500.0 --> 1.00E+04
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test Scale 31 :
+Resolution to test : 13
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Résolution 12 --> SUCCESS  SUCCESS
+Test for 2 activated channel :
+Test Scale 1 :
+Resolution to test : 1
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Scale 2 :
+Resolution to test : 2
+Test Résolution 0 --> SUCCESS  FAILED --> 10000000000.0 --> 5.00E+09
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Scale 3 :
+Resolution to test : 2
+Test Résolution 0 --> SUCCESS  FAILED --> 2500000000.0 --> 5.00E+09
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Scale 4 :
+Resolution to test : 3
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Scale 5 :
+Resolution to test : 4
+Test Résolution 0 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 250000000.0 --> 6.25E+08
+Test Résolution 1 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 1250000000.0 --> 2.50E+09
+Test Résolution 2 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 2500000000.0 --> 5.00E+09
+Test Résolution 3 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 5000000000.0 --> 1.00E+10
+Test Scale 6 :
+Resolution to test : 5
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Scale 7 :
+Resolution to test : 6
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Scale 8 :
+Resolution to test : 7
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Scale 9 :
+Resolution to test : 8
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Scale 10 :
+Resolution to test : 9
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Scale 11 :
+Resolution to test : 10
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Scale 12 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 13 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 14 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 15 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 16 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 17 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  FAILED --> 125000000.0 --> 1.00E+08
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 18 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 19 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 20 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  FAILED --> 12500000.0 --> 1.00E+07
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 21 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 22 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 23 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  FAILED --> 1250000.0 --> 1.00E+06
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 24 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 25 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 26 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  FAILED --> 125000.0 --> 1.00E+05
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 27 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 28 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 29 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 30 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test Scale 31 :
+Resolution to test : 12
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Résolution 11 --> SUCCESS  SUCCESS
+Test for 3 activated channel :
+Test Scale 2 :
+Resolution to test : 1
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Scale 3 :
+Resolution to test : 1
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Scale 4 :
+Resolution to test : 2
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Scale 5 :
+Resolution to test : 3
+Test Résolution 0 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 250000000.0 --> 6.25E+08
+Test Résolution 1 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 1250000000.0 --> 2.50E+09
+Test Résolution 2 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 2500000000.0 --> 5.00E+09
+Test Scale 6 :
+Resolution to test : 4
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Scale 7 :
+Resolution to test : 5
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Scale 8 :
+Resolution to test : 6
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Scale 9 :
+Resolution to test : 7
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Scale 10 :
+Resolution to test : 8
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Scale 11 :
+Resolution to test : 9
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Scale 12 :
+Resolution to test : 10
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Scale 13 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 14 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 15 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 16 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 17 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 18 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 19 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 20 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 21 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 22 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 23 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 24 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 25 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 26 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 27 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 28 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 29 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  FAILED --> 10000.0 --> 1.25E+04
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 30 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 31 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test for 4 activated channel :
+Test Scale 2 :
+Resolution to test : 1
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Scale 3 :
+Resolution to test : 1
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Scale 4 :
+Resolution to test : 2
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Scale 5 :
+Resolution to test : 3
+Test Résolution 0 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 250000000.0 --> 6.25E+08
+Test Résolution 1 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 1250000000.0 --> 2.50E+09
+Test Résolution 2 --> FAILED --> 2e-07 --> 100E-9  FAILED --> 2500000000.0 --> 5.00E+09
+Test Scale 6 :
+Resolution to test : 4
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Scale 7 :
+Resolution to test : 5
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Scale 8 :
+Resolution to test : 6
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Scale 9 :
+Resolution to test : 7
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Scale 10 :
+Resolution to test : 8
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Scale 11 :
+Resolution to test : 9
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Scale 12 :
+Resolution to test : 10
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Scale 13 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 14 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 15 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 16 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 17 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 18 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 19 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 20 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 21 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 22 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 23 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 24 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 25 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 26 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 27 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 28 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 29 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  FAILED --> 10000.0 --> 1.25E+04
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 30 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS
+Test Scale 31 :
+Resolution to test : 11
+Test Résolution 0 --> SUCCESS  SUCCESS
+Test Résolution 1 --> SUCCESS  SUCCESS
+Test Résolution 2 --> SUCCESS  SUCCESS
+Test Résolution 3 --> SUCCESS  SUCCESS
+Test Résolution 4 --> SUCCESS  SUCCESS
+Test Résolution 5 --> SUCCESS  SUCCESS
+Test Résolution 6 --> SUCCESS  SUCCESS
+Test Résolution 7 --> SUCCESS  SUCCESS
+Test Résolution 8 --> SUCCESS  SUCCESS
+Test Résolution 9 --> SUCCESS  SUCCESS
+Test Résolution 10 --> SUCCESS  SUCCESS

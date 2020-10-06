@@ -1,0 +1,12 @@
+channel1;1
+ch1_pos;0
+ch1_sca;2
+channel2;1
+ch2_pos;-3
+ch2_sca;8
+channel3;0
+ch3_pos;0
+ch3_sca;8
+channel4;0
+ch4_pos;0
+ch4_sca;0

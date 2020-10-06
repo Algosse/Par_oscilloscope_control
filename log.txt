@@ -1,0 +1,2 @@
+oscilloscope connection problem
+start acquisition

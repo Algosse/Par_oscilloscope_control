@@ -1,0 +1,35 @@
+# ==========================================
+# File structure
+# ==========================================
+str = date = 26_02
+str = waveform_path = waveform
+str = wave_filename = wfm_plaintext
+str = file_extension = csv
+str = trigger_filename = trigger
+str = key file = key.dat
+str = plaintext file = plaintext.dat
+# ==========================================
+# Measurement parameters
+# ==========================================
+int = nb_plain = 100
+int = nb_curve = 500
+int = index = 17
+# ==========================================
+# Trigger parameters
+# ==========================================
+int = get trigger = 1
+# ==========================================
+# nucleo parameters
+# ==========================================
+str = com port = COM7
+int = baudrate = 115200
+str = parity = N
+int = bytesize = 8
+int = stopbits = 1
+int = debug = 0
+# ==========================================
+# nucleo parameters
+# ==========================================
+str = encoding = utf-8
+int = key generate = 0
+int = plaintext generate = 0

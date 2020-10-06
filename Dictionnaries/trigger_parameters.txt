@@ -1,0 +1,4 @@
+trig_sou;1
+trig_cou;0
+trig_slo;0
+trig_lvl;0.6

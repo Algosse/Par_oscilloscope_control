@@ -1,0 +1,3 @@
+hor_pos;10
+hor_sca;16
+hor_res;8
