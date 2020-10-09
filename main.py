@@ -9,6 +9,12 @@ import time
 from Utils import ui_test
 from Acq_script import nucleo_acquisition
 from Acq_script import test_acquisition
+from PyQt5 import QtGui
+from PyQt5.QtGui import QPixmap
+import cv2
+from PyQt5.QtCore import pyqtSignal, pyqtSlot, Qt, QThread
+import numpy as np
+
 
 class MyWindow(QtWidgets.QMainWindow):
 
@@ -32,39 +38,60 @@ class MyWindow(QtWidgets.QMainWindow):
 #   other initialization
 # =============================================================================
         self.update_res()
+
 # =============================================================================
 #   Connection of menu to actions
 # =============================================================================
         self.ui.actionConnect.triggered.connect(self.instrument_connect)
         self.ui.actionDisconnect.triggered.connect(self.instrument_disconnect)
         self.ui.actionLoad_from_file_2.triggered.connect(self.load_file)
-        self.ui.actionLoad_from_oscilloscope.triggered.connect(self.read_instrument)
+        self.ui.actionLoad_from_oscilloscope.triggered.connect(
+            self.read_instrument)
         self.ui.actionSave.triggered.connect(self.save)
         self.ui.actionQuit.triggered.connect(self.close)
 # =============================================================================
 #       Help Menu connection
 # =============================================================================
-        self.ui.actionAcquisition.triggered.connect(lambda: os.startfile("Help\Acquisition.pdf"))
-        self.ui.actionAlias.triggered.connect(lambda: os.startfile("Help\Alias.pdf"))
-        self.ui.actionCalibrate.triggered.connect(lambda: os.startfile("Help\Calibrate.pdf"))
-        self.ui.actionCursor.triggered.connect(lambda: os.startfile("Help\Cursor.pdf"))
-        self.ui.actionDiagnostic.triggered.connect(lambda: os.startfile("Help\Diagnostic.pdf"))
-        self.ui.actionDisplay.triggered.connect(lambda: os.startfile("Help\Display.pdf"))
-        self.ui.actionFile_System.triggered.connect(lambda: os.startfile("Help\File_System.pdf"))
-        self.ui.actionHardcopy.triggered.connect(lambda: os.startfile("Help\Hardcopy.pdf"))
-        self.ui.actionHistogram.triggered.connect(lambda: os.startfile("Help\Histogram.pdf"))
-        self.ui.actionHorizontal.triggered.connect(lambda: os.startfile("Help\Horizontal.pdf"))
-        self.ui.actionMath.triggered.connect(lambda: os.startfile("Help\Math.pdf"))
-        self.ui.actionMeasurement.triggered.connect(lambda: os.startfile("Help\Measurement.pdf"))
-        self.ui.actionMiscellaneous.triggered.connect(lambda: os.startfile("Help\Miscellaneous.pdf"))
-        self.ui.actionSave_and_Recall.triggered.connect(lambda: os.startfile("Help\Save_and_Reccal.pdf"))
-        self.ui.actionStatus_and_Error.triggered.connect(lambda: os.startfile("Help\Status_and_Error.pdf"))
-        self.ui.actionTrigger.triggered.connect(lambda: os.startfile("Help\Trigger.pdf"))
-        self.ui.actionVertical.triggered.connect(lambda: os.startfile("Help\Vertical.pdf"))
-        self.ui.actionWaveform_Transfert.triggered.connect(lambda: os.startfile("Help\Waveform_Transfert.pdf"))
-        self.ui.actionZoom.triggered.connect(lambda: os.startfile("Help\Zoom.pdf"))
-        
-        
+        self.ui.actionAcquisition.triggered.connect(
+            lambda: os.startfile("Help/Acquisition.pdf"))
+        self.ui.actionAlias.triggered.connect(
+            lambda: os.startfile("Help/Alias.pdf"))
+        self.ui.actionCalibrate.triggered.connect(
+            lambda: os.startfile("Help/Calibrate.pdf"))
+        self.ui.actionCursor.triggered.connect(
+            lambda: os.startfile("Help/Cursor.pdf"))
+        self.ui.actionDiagnostic.triggered.connect(
+            lambda: os.startfile("Help/Diagnostic.pdf"))
+        self.ui.actionDisplay.triggered.connect(
+            lambda: os.startfile("Help/Display.pdf"))
+        self.ui.actionFile_System.triggered.connect(
+            lambda: os.startfile("Help/File_System.pdf"))
+        self.ui.actionHardcopy.triggered.connect(
+            lambda: os.startfile("Help/Hardcopy.pdf"))
+        self.ui.actionHistogram.triggered.connect(
+            lambda: os.startfile("Help/Histogram.pdf"))
+        self.ui.actionHorizontal.triggered.connect(
+            lambda: os.startfile("Help/Horizontal.pdf"))
+        self.ui.actionMath.triggered.connect(
+            lambda: os.startfile("Help/Math.pdf"))
+        self.ui.actionMeasurement.triggered.connect(
+            lambda: os.startfile("Help/Measurement.pdf"))
+        self.ui.actionMiscellaneous.triggered.connect(
+            lambda: os.startfile("Help/Miscellaneous.pdf"))
+        self.ui.actionSave_and_Recall.triggered.connect(
+            lambda: os.startfile("Help/Save_and_Reccal.pdf"))
+        self.ui.actionStatus_and_Error.triggered.connect(
+            lambda: os.startfile("Help/Status_and_Error.pdf"))
+        self.ui.actionTrigger.triggered.connect(
+            lambda: os.startfile("Help/Trigger.pdf"))
+        self.ui.actionVertical.triggered.connect(
+            lambda: os.startfile("Help/Vertical.pdf"))
+        self.ui.actionWaveform_Transfert.triggered.connect(
+            lambda: os.startfile("Help/Waveform_Transfert.pdf"))
+        self.ui.actionZoom.triggered.connect(
+            lambda: os.startfile("Help/Zoom.pdf"))
+
+
 # =============================================================================
 #   Connection of button actions
 # =============================================================================
@@ -76,7 +103,7 @@ class MyWindow(QtWidgets.QMainWindow):
         self.ui.btn_apply.clicked.connect(self.apply_changes)
         self.ui.btn_send_cmd.clicked.connect(self.send_cmd)
         self.ui.btn_acq.clicked.connect(self.start_acquisition)
-        
+
 # =============================================================================
 #   Other connection
 # =============================================================================
@@ -86,23 +113,49 @@ class MyWindow(QtWidgets.QMainWindow):
         self.ui.channel3.toggled.connect(self.update_res)
         self.ui.channel4.toggled.connect(self.update_res)
         self.ui.acq_grp.toggled.connect(self.active_acq)
-        self.ui.check_data_start.stateChanged.connect(lambda: self.ui.data_start.setEnabled(self.ui.check_data_start.isChecked()))
-        self.ui.check_data_stop.stateChanged.connect(lambda: self.ui.data_stop.setEnabled(self.ui.check_data_stop.isChecked()))
+        self.ui.check_data_start.stateChanged.connect(
+            lambda: self.ui.data_start.setEnabled(self.ui.check_data_start.isChecked()))
+        self.ui.check_data_stop.stateChanged.connect(
+            lambda: self.ui.data_stop.setEnabled(self.ui.check_data_stop.isChecked()))
         self.ui.hor_res.currentIndexChanged.connect(self.data_stop_update)
         self.ui.acq_script.currentIndexChanged.connect(self.acq_script_param)
+
+
+# =============================================================================
+#   Run video
+# =============================================================================
+
+        self.initialiseCamera()
+
+        self.display_width = 281
+        self.display_height = 251
+
+        # create the video capture thread
+        self.thread = VideoThread(0)
+        # connect its signal to the update_image slot
+        self.thread.change_pixmap_signal.connect(self.update_image)
+        # start the thread
+        self.thread.start()
+
+# =============================================================================
+#   Circuit Recognition Connections
+# =============================================================================
+
+        self.ui.CameraSelect.currentIndexChanged.connect(self.changeCam)
 
 # =============================================================================
 #   Functions
 # =============================================================================
+
     def send_cmd(self):
-        cmd=self.ui.cmd_line.text()
-        if cmd[len(cmd)-1]=='?':
+        cmd = self.ui.cmd_line.text()
+        if cmd[len(cmd) - 1] == '?':
             self.ui.log.append(self.oscilloscope.query(cmd) + "\n")
             with open("log.txt", "w") as log:
                 log.write(self.ui.log.toPlainText())
         else:
             self.oscilloscope.write(cmd)
-    
+
     def instrument_connect(self):
         rm = visa.ResourceManager()
         try:
@@ -126,7 +179,7 @@ class MyWindow(QtWidgets.QMainWindow):
             with open("log.txt", "w") as log:
                 log.write(self.ui.log.toPlainText())
             return 0
-        
+
     def instrument_disconnect(self):
         try:
             self.oscilloscope.close()
@@ -147,7 +200,7 @@ class MyWindow(QtWidgets.QMainWindow):
             self.ui.log.append('oscilloscope disconnection problem')
             with open("log.txt", "w") as log:
                 log.write(self.ui.log.toPlainText())
-    
+
     def load_file(self):
         if self.ui.check_vert_app.isChecked():
             self.load_vertical()
@@ -155,12 +208,12 @@ class MyWindow(QtWidgets.QMainWindow):
             self.load_horizontal()
         if self.ui.check_trig_app.isChecked():
             self.load_trigger()
-        
+
     def read_instrument(self):
         self.ui.log.append('read_instrument : not implemented')
         with open("log.txt", "w") as log:
             log.write(self.ui.log.toPlainText())
-    
+
     def save(self):
         if self.ui.check_vert_app.isChecked():
             self.save_vertical()
@@ -171,7 +224,7 @@ class MyWindow(QtWidgets.QMainWindow):
 
     def close(self):
         QtCore.QCoreApplication.instance().quit()
-        
+
     def apply_changes(self):
         self.ui.log.append('apply change to instrument')
         with open("log.txt", "w") as log:
@@ -184,33 +237,35 @@ class MyWindow(QtWidgets.QMainWindow):
             self.apply_trigger()
         if self.ui.check_wfm_app.isChecked():
             self.apply_wfm()
-        
+
     def update_res(self):
         self.ui.hor_res.clear()
-        index=self.ui.hor_sca.currentIndex()
-        f=open('dictionnaries/resolutions.txt', 'r')
-        for i in range(0, index+1):
-            s=(f.readline()).rstrip()
+        index = self.ui.hor_sca.currentIndex()
+        f = open('dictionnaries/resolutions.txt', 'r')
+        for i in range(0, index + 1):
+            s = (f.readline()).rstrip()
         f.close()
         del f
         del index
-        tmp=s.split(';')
+        tmp = s.split(';')
         del s
-        act_ch=self.activated_channel()
-        if act_ch>0:
-            for i in range(0, len(tmp)-(self.activated_channel()-1)):
+        act_ch = self.activated_channel()
+        if act_ch > 0:
+            for i in range(0, len(tmp) - (self.activated_channel() - 1)):
                 self.ui.hor_res.addItem(tmp[i])
-                
+
     def data_stop_update(self):
-        if (not(self.ui.data_stop.isEnabled()) and type(self.oscilloscope)!=type(None)):
-            self.ui.data_stop.setText(self.oscilloscope.query("HORizontal:RECOrdlength?"))
-            
+        if (not(self.ui.data_stop.isEnabled()) and type(self.oscilloscope) != type(None)):
+            self.ui.data_stop.setText(
+                self.oscilloscope.query("HORizontal:RECOrdlength?"))
+
     def activated_channel(self):
-        res = self.ui.channel1.isChecked() + self.ui.channel2.isChecked() + self.ui.channel3.isChecked()
+        res = self.ui.channel1.isChecked() + self.ui.channel2.isChecked() + \
+            self.ui.channel3.isChecked()
         if (res < 3):
-            res = res +self.ui.channel4.isChecked()
+            res = res + self.ui.channel4.isChecked()
         return res
-    
+
     def apply_vertical(self):
         self.ui.log.append('apply vertical settings')
         with open("log.txt", "w") as log:
@@ -243,153 +298,160 @@ class MyWindow(QtWidgets.QMainWindow):
             self.oscilloscope.write("CH4:POS " + self.ui.ch4_pos.text())
         else:
             self.oscilloscope.write("SELECT:CH4 OFF")
-        
+
     def apply_horizontal(self):
         self.ui.log.append('apply horizontal settings')
         with open("log.txt", "w") as log:
             log.write(self.ui.log.toPlainText())
         self.oscilloscope.write("HOR:POS " + self.ui.hor_pos.text())
         self.oscilloscope.write("HOR:MAI:SCA " + self.ui.hor_sca.currentText())
-        if (len(self.ui.hor_res.currentText())>0):
-            self.oscilloscope.write("HOR:RESO " + str(10*float(self.ui.hor_res.currentText())*float(self.ui.hor_sca.currentText())))
-        
+        if (len(self.ui.hor_res.currentText()) > 0):
+            self.oscilloscope.write("HOR:RESO " + str(10 * float(
+                self.ui.hor_res.currentText()) * float(self.ui.hor_sca.currentText())))
+
     def apply_trigger(self):
         self.ui.log.append('apply trigger settings')
         with open("log.txt", "w") as log:
             log.write(self.ui.log.toPlainText())
-        self.oscilloscope.write("TRIGger:A:EDGE:SOU " + self.ui.trig_sou.currentText())
-        self.oscilloscope.write("TRIGger:A:EDGE:COUP " + self.ui.trig_cou.currentText())
-        self.oscilloscope.write("TRIGger:A:EDGE:SLO " + self.ui.trig_slo.currentText())
+        self.oscilloscope.write(
+            "TRIGger:A:EDGE:SOU " + self.ui.trig_sou.currentText())
+        self.oscilloscope.write(
+            "TRIGger:A:EDGE:COUP " + self.ui.trig_cou.currentText())
+        self.oscilloscope.write(
+            "TRIGger:A:EDGE:SLO " + self.ui.trig_slo.currentText())
         self.oscilloscope.write("TRIGger:A:LEVel " + self.ui.trig_lvl.text())
-        
+
     def apply_wfm(self):
         self.ui.log.append('apply Waveform parameter settings')
         with open("log.txt", "w") as log:
             log.write(self.ui.log.toPlainText())
-        self.oscilloscope.write("DATa:SOUrce " + self.ui.data_sou.currentText())
-        self.oscilloscope.write("DATa:ENCdg " + self.ui.data_encoding.currentText())
+        self.oscilloscope.write(
+            "DATa:SOUrce " + self.ui.data_sou.currentText())
+        self.oscilloscope.write(
+            "DATa:ENCdg " + self.ui.data_encoding.currentText())
         self.oscilloscope.write("DATa:STARt " + self.ui.data_start.text())
         self.oscilloscope.write("DATa:STOP " + self.ui.data_stop.text())
-        
+
     def save_vertical(self):
-        f=open('dictionnaries/vertical_parameters.txt', 'w')
+        f = open('dictionnaries/vertical_parameters.txt', 'w')
         if self.ui.channel1.isChecked():
             f.write("channel1;1\n")
         else:
             f.write("channel1;0\n")
-        f.write("ch1_pos;"+self.ui.ch1_pos.text() + "\n")
-        f.write("ch1_sca;"+str(self.ui.ch1_sca.currentIndex()) + "\n")
+        f.write("ch1_pos;" + self.ui.ch1_pos.text() + "\n")
+        f.write("ch1_sca;" + str(self.ui.ch1_sca.currentIndex()) + "\n")
         if self.ui.channel2.isChecked():
             f.write("channel2;1\n")
         else:
             f.write("channel2;0\n")
-        f.write("ch2_pos;"+self.ui.ch2_pos.text() + "\n")
-        f.write("ch2_sca;"+str(self.ui.ch2_sca.currentIndex()) + "\n")
+        f.write("ch2_pos;" + self.ui.ch2_pos.text() + "\n")
+        f.write("ch2_sca;" + str(self.ui.ch2_sca.currentIndex()) + "\n")
         if self.ui.channel3.isChecked():
             f.write("channel3;1\n")
         else:
             f.write("channel3;0\n")
-        f.write("ch3_pos;"+self.ui.ch3_pos.text() + "\n")
-        f.write("ch3_sca;"+str(self.ui.ch3_sca.currentIndex()) + "\n")
+        f.write("ch3_pos;" + self.ui.ch3_pos.text() + "\n")
+        f.write("ch3_sca;" + str(self.ui.ch3_sca.currentIndex()) + "\n")
         if self.ui.channel4.isChecked():
             f.write("channel4;1\n")
         else:
             f.write("channel4;0\n")
-        f.write("ch4_pos;"+self.ui.ch4_pos.text() + "\n")
-        f.write("ch4_sca;"+str(self.ui.ch4_sca.currentIndex()) + "\n")
+        f.write("ch4_pos;" + self.ui.ch4_pos.text() + "\n")
+        f.write("ch4_sca;" + str(self.ui.ch4_sca.currentIndex()) + "\n")
         f.close()
-        
+
     def save_horizontal(self):
-        f=open('dictionnaries/horizontal_parameters.txt', 'w')
-        f.write("hor_pos;"+self.ui.hor_pos.text()+"\n")
-        f.write("hor_sca;"+str(self.ui.hor_sca.currentIndex())+"\n")
-        f.write("hor_res;"+str(self.ui.hor_res.currentIndex())+"\n")
+        f = open('dictionnaries/horizontal_parameters.txt', 'w')
+        f.write("hor_pos;" + self.ui.hor_pos.text() + "\n")
+        f.write("hor_sca;" + str(self.ui.hor_sca.currentIndex()) + "\n")
+        f.write("hor_res;" + str(self.ui.hor_res.currentIndex()) + "\n")
         f.close()
-        
+
     def save_trigger(self):
-        f=open('dictionnaries/trigger_parameters.txt', 'w')
-        f.write("trig_sou;"+str(self.ui.trig_sou.currentIndex())+"\n")
-        f.write("trig_cou;"+str(self.ui.trig_cou.currentIndex())+"\n")
-        f.write("trig_slo;"+str(self.ui.trig_slo.currentIndex())+"\n")
-        f.write("trig_lvl;"+self.ui.trig_lvl.text()+"\n")
+        f = open('dictionnaries/trigger_parameters.txt', 'w')
+        f.write("trig_sou;" + str(self.ui.trig_sou.currentIndex()) + "\n")
+        f.write("trig_cou;" + str(self.ui.trig_cou.currentIndex()) + "\n")
+        f.write("trig_slo;" + str(self.ui.trig_slo.currentIndex()) + "\n")
+        f.write("trig_lvl;" + self.ui.trig_lvl.text() + "\n")
         f.close()
 
     def load_vertical(self):
-        f=open('dictionnaries/vertical_parameters.txt', 'r')
-        s=f.readlines()
+        f = open('dictionnaries/vertical_parameters.txt', 'r')
+        s = f.readlines()
         f.close()
         # Channel 1
-        t=(s[0].rstrip()).split(';')
+        t = (s[0].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setChecked(int(" + t[1] + "))")
-        t=(s[1].rstrip()).split(';')
+        t = (s[1].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setText(str(" + t[1] + "))")
-        t=(s[2].rstrip()).split(';')
+        t = (s[2].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setCurrentIndex(int(" + t[1] + "))")
         # Channel 2
-        t=(s[3].rstrip()).split(';')
+        t = (s[3].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setChecked(int(" + t[1] + "))")
-        t=(s[4].rstrip()).split(';')
+        t = (s[4].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setText(str(" + t[1] + "))")
-        t=(s[5].rstrip()).split(';')
+        t = (s[5].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setCurrentIndex(int(" + t[1] + "))")
         # Channel 3
-        t=(s[6].rstrip()).split(';')
+        t = (s[6].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setChecked(int(" + t[1] + "))")
-        t=(s[7].rstrip()).split(';')
+        t = (s[7].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setText(str(" + t[1] + "))")
-        t=(s[8].rstrip()).split(';')
+        t = (s[8].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setCurrentIndex(int(" + t[1] + "))")
         # Channel 4
-        t=(s[9].rstrip()).split(';')
+        t = (s[9].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setChecked(int(" + t[1] + "))")
-        t=(s[10].rstrip()).split(';')
+        t = (s[10].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setText(str(" + t[1] + "))")
-        t=(s[11].rstrip()).split(';')
+        t = (s[11].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setCurrentIndex(int(" + t[1] + "))")
-        
+
     def load_horizontal(self):
-        f=open('dictionnaries/horizontal_parameters.txt', 'r')
-        s=f.readlines()
+        f = open('dictionnaries/horizontal_parameters.txt', 'r')
+        s = f.readlines()
         f.close()
-        t=(s[0].rstrip()).split(';')
+        t = (s[0].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setText(str(" + t[1] + "))")
-        t=(s[1].rstrip()).split(';')
+        t = (s[1].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setCurrentIndex(int(" + t[1] + "))")
-        t=(s[2].rstrip()).split(';')
+        t = (s[2].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setCurrentIndex(int(" + t[1] + "))")
-        
+
     def load_trigger(self):
-        f=open('dictionnaries/trigger_parameters.txt', 'r')
-        s=f.readlines()
+        f = open('dictionnaries/trigger_parameters.txt', 'r')
+        s = f.readlines()
         f.close()
-        t=(s[0].rstrip()).split(';')
+        t = (s[0].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setCurrentIndex(int(" + t[1] + "))")
-        t=(s[1].rstrip()).split(';')
+        t = (s[1].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setCurrentIndex(int(" + t[1] + "))")
-        t=(s[2].rstrip()).split(';')
+        t = (s[2].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setCurrentIndex(int(" + t[1] + "))")
-        t=(s[3].rstrip()).split(';')
+        t = (s[3].rstrip()).split(';')
         eval("self.ui." + t[0] + ".setText(str(" + t[1] + "))")
-    
+
     def active_acq(self):
         self.ui.acq_script.clear()
         self.ui.parameter_edit.clear()
         if self.ui.acq_grp.isEnabled():
             for file in os.listdir("Acq_script/"):
                 if file.endswith(".py"):
-                    self.ui.acq_script.addItem(file[0:len(file)-3])
-    
+                    self.ui.acq_script.addItem(file[0:len(file) - 3])
+
     def acq_script_param(self):
-        if len(self.ui.acq_script.currentText())>0:
-            param_file = open("Acq_script/" + self.ui.acq_script.currentText() + ".dat", "r")
-            l=param_file.readlines()
+        if len(self.ui.acq_script.currentText()) > 0:
+            param_file = open(
+                "Acq_script/" + self.ui.acq_script.currentText() + ".dat", "r")
+            l = param_file.readlines()
             param_file.close()
             self.ui.parameter_edit.clear()
             for i in range(0, len(l)):
                 self.ui.parameter_edit.append(l[i].rstrip())
-        
+
     def start_acquisition(self):
-        if type(self.oscilloscope)!=type(None):
+        if type(self.oscilloscope) != type(None):
             self.ui.log.append('start acquisition')
             with open("log.txt", "w") as log:
                 log.write(self.ui.log.toPlainText())
@@ -402,12 +464,82 @@ class MyWindow(QtWidgets.QMainWindow):
 # =============================================================================
             eval(self.ui.acq_script.currentText() + ".run(self)")
             self.ui.log.append('Acquisition done')
-            
+
     def onCountChanged(self, val):
         self.ui.progressBar.setValue(val)
 
+    def initialiseCamera(self):
+        availableCameras = []
+
+        for i in range(5):
+            cap = cv2.VideoCapture(i, cv2.CAP_DSHOW)
+            if cap != None and cap.isOpened():
+                availableCameras.append(i)
+                cap.release()
+
+        self.ui.CameraSelect.clear()
+        for camera in availableCameras:
+            self.ui.CameraSelect.addItem(str(camera))
+
+    @pyqtSlot(np.ndarray)
+    def update_image(self, cv_img):
+        """Updates the image_label with a new opencv image"""
+        qt_img = self.convert_cv_qt(cv_img)
+        self.ui.CameraDisplay.setPixmap(qt_img)
+
+    def convert_cv_qt(self, cv_img):
+        """Convert from an opencv image to QPixmap"""
+        rgb_image = cv2.cvtColor(cv_img, cv2.COLOR_BGR2RGB)
+        h, w, ch = rgb_image.shape
+        bytes_per_line = ch * w
+        convert_to_Qt_format = QtGui.QImage(
+            rgb_image.data, w, h, bytes_per_line, QtGui.QImage.Format_RGB888)
+        p = convert_to_Qt_format.scaled(
+            self.display_width, self.display_height, Qt.KeepAspectRatio)
+        return QPixmap.fromImage(p)
+
+    def changeCam(self):
+        """ Reboot the thread with the right cam index"""
+        cam = self.ui.CameraSelect.currentIndex()
+
+        self.thread.stop()
+        self.thread = VideoThread(cam)
+        self.thread.change_pixmap_signal.connect(self.update_image)
+        self.thread.start()
+
+    def closeEvent(self, event):
+        """ Method called when the window is closed """
+        self.thread.stop()
+        event.accept()
+
+
+class VideoThread(QThread):
+    """ Thread displaying opencv VideoCapture (allow the interaction with the window while displaying) """
+
+    def __init__(self, cam):
+        super().__init__()
+        self.running = True
+        self.cam = cam
+
+    change_pixmap_signal = pyqtSignal(np.ndarray)
+
+    def run(self):
+        # capture from web cam
+        cap = cv2.VideoCapture(self.cam, cv2.CAP_DSHOW)
+        while self.running:
+            ret, cv_img = cap.read()
+            if ret:
+                # Send the image thru a slot to MyWindow.update_image
+                self.change_pixmap_signal.emit(cv_img)
+
+    def stop(self):
+        """Sets run flag to False and waits for thread to finish"""
+        self.running = False
+        self.wait()
+
+
 if __name__ == '__main__':
-    test=0
+    test = 0
     app = QtWidgets.QApplication(sys.argv)
     window = MyWindow()
     window.show()
