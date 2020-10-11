@@ -14,7 +14,13 @@
    <string>Oscilloscope Control</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="cam_onglets">
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="accessibleName">
+    <string>Central_Widget</string>
+   </property>
+   <widget class="QTabWidget" name="W_onglets">
     <property name="geometry">
      <rect>
       <x>-4</x>
@@ -23,9 +29,198 @@
       <height>511</height>
      </rect>
     </property>
+    <property name="accessibleName">
+     <string>W_onglets</string>
+    </property>
     <property name="currentIndex">
      <number>3</number>
     </property>
+    <widget class="QWidget" name="wfm_tab">
+     <attribute name="title">
+      <string>Waveform</string>
+     </attribute>
+     <widget class="QGroupBox" name="wfm_grp">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>231</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Waveform parameters</string>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>30</y>
+         <width>188</width>
+         <height>119</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="2" column="1">
+         <widget class="QComboBox" name="data_encoding">
+          <item>
+           <property name="text">
+            <string>ASCII</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="data_stop">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QCheckBox" name="check_data_start">
+          <property name="text">
+           <string>Start</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QCheckBox" name="check_data_stop">
+          <property name="text">
+           <string>Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lbl_data_encoding">
+          <property name="text">
+           <string>Encoding</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="data_start">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="data_sou">
+          <item>
+           <property name="text">
+            <string>CH1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>CH2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>CH3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>CH4</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lbl_data_sou">
+          <property name="text">
+           <string>Data source</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="acq_grp">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>210</y>
+        <width>491</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Acquisition</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <widget class="QComboBox" name="acq_script">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>20</y>
+         <width>161</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="parameter_edit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>461</width>
+         <height>151</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_acq">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>220</y>
+         <width>101</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Start acquisition</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lbl_acq_script">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Acquisition Script</string>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="progressBar">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>220</y>
+         <width>341</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+      </widget>
+     </widget>
+    </widget>
     <widget class="QWidget" name="acq_tab">
      <attribute name="title">
       <string>Acquisition settup</string>
@@ -803,192 +998,6 @@
       </layout>
      </widget>
     </widget>
-    <widget class="QWidget" name="wfm_tab">
-     <attribute name="title">
-      <string>Waveform</string>
-     </attribute>
-     <widget class="QGroupBox" name="wfm_grp">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>20</y>
-        <width>231</width>
-        <height>171</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Waveform parameters</string>
-      </property>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>30</y>
-         <width>188</width>
-         <height>119</height>
-        </rect>
-       </property>
-       <layout class="QGridLayout" name="gridLayout_9">
-        <item row="2" column="1">
-         <widget class="QComboBox" name="data_encoding">
-          <item>
-           <property name="text">
-            <string>ASCII</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="QLineEdit" name="data_stop">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QCheckBox" name="check_data_start">
-          <property name="text">
-           <string>Start</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QCheckBox" name="check_data_stop">
-          <property name="text">
-           <string>Stop</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="lbl_data_encoding">
-          <property name="text">
-           <string>Encoding</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QLineEdit" name="data_start">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QComboBox" name="data_sou">
-          <item>
-           <property name="text">
-            <string>CH1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>CH2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>CH3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>CH4</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="lbl_data_sou">
-          <property name="text">
-           <string>Data source</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-     <widget class="QGroupBox" name="acq_grp">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>210</y>
-        <width>491</width>
-        <height>261</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Acquisition</string>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="checked">
-       <bool>false</bool>
-      </property>
-      <widget class="QComboBox" name="acq_script">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>20</y>
-         <width>161</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QTextEdit" name="parameter_edit">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>60</y>
-         <width>461</width>
-         <height>151</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btn_acq">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>220</y>
-         <width>101</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Start acquisition</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="lbl_acq_script">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>81</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Acquisition Script</string>
-       </property>
-      </widget>
-      <widget class="QProgressBar" name="progressBar">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>220</y>
-         <width>341</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="value">
-        <number>24</number>
-       </property>
-      </widget>
-     </widget>
-    </widget>
     <widget class="QWidget" name="log_tab">
      <attribute name="title">
       <string>Log</string>
@@ -1008,13 +1017,16 @@
      </widget>
     </widget>
     <widget class="QWidget" name="CR_tab">
+     <property name="accessibleName">
+      <string>Cr_tab</string>
+     </property>
      <attribute name="title">
       <string>Circuit recognition</string>
      </attribute>
      <widget class="QComboBox" name="CameraSelect">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>440</x>
         <y>20</y>
         <width>69</width>
         <height>22</height>
@@ -1024,15 +1036,322 @@
      <widget class="QLabel" name="CameraDisplay">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>80</y>
-        <width>281</width>
-        <height>251</height>
+        <x>310</x>
+        <y>50</y>
+        <width>211</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="accessibleName">
+       <string>CameraDisplay</string>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>10</y>
+        <width>71</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>Select camera</string>
       </property>
+     </widget>
+     <widget class="QPushButton" name="toogleCamera">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>220</y>
+        <width>91</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Take picture</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>250</y>
+        <width>201</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Circuit contour</string>
+      </property>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>40</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Top left corner</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>60</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Top right corner</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>80</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Bot left corner</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="cornerTRY">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>60</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="cornerTRX">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>60</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="cornerTLX">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>40</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="cornerTLY">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>40</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="cornerBLX">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>80</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="cornerBLY">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>80</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>20</y>
+         <width>20</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>X</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>20</y>
+         <width>20</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Y</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="placeCornerTL">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>40</y>
+         <width>41</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Place</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="placeCornerTR">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>60</y>
+         <width>41</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Place</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="placeCornerBL">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>80</y>
+         <width>41</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Place</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="resetRectangle">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>100</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Reset rectangle</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="DrawRectangle">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>100</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Draw rectangle</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </widget>

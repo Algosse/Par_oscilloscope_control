@@ -3,16 +3,16 @@
 import sys
 import os
 import visa
-from PyQt5 import QtWidgets, QtCore
 import Oscilloscope_control as ui_osc
 import time
 from Utils import ui_test
 from Acq_script import nucleo_acquisition
 from Acq_script import test_acquisition
+from PyQt5 import QtWidgets, QtCore
 from PyQt5 import QtGui
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QPixmap, QPainter, QPen
+from PyQt5.QtCore import pyqtSignal, pyqtSlot, Qt, QThread, QPoint
 import cv2
-from PyQt5.QtCore import pyqtSignal, pyqtSlot, Qt, QThread
 import numpy as np
 
 
@@ -125,13 +125,22 @@ class MyWindow(QtWidgets.QMainWindow):
 #   Run video
 # =============================================================================
 
+        self.playCamera = True
+        self.cameraScreenShot = ""
         self.initialiseCamera()
+        self.display_width = self.ui.CameraDisplay.size().width()
+        self.display_height = self.ui.CameraDisplay.size().height()
+        # Draw on image
+        self.drawing = False
+        self.globalDrawing = True
 
-        self.display_width = 281
-        self.display_height = 251
+        # Draw Rect
+        self.resetRectangle()
+        self.isPlacingCorner = False
+        self.placingCorner = None
 
         # create the video capture thread
-        self.thread = VideoThread(0)
+        self.thread = VideoThread(1)
         # connect its signal to the update_image slot
         self.thread.change_pixmap_signal.connect(self.update_image)
         # start the thread
@@ -142,6 +151,15 @@ class MyWindow(QtWidgets.QMainWindow):
 # =============================================================================
 
         self.ui.CameraSelect.currentIndexChanged.connect(self.changeCam)
+        self.ui.toogleCamera.clicked.connect(self.toogleCamera)
+        self.ui.placeCornerTL.clicked.connect(
+            lambda: self.placeCorner('tl'))
+        self.ui.placeCornerTR.clicked.connect(
+            lambda: self.placeCorner('tr'))
+        self.ui.placeCornerBL.clicked.connect(
+            lambda: self.placeCorner('bl'))
+        self.ui.resetRectangle.clicked.connect(self.resetRectangle)
+        self.ui.DrawRectangle.clicked.connect(self.drawRectangle)
 
 # =============================================================================
 #   Functions
@@ -484,8 +502,10 @@ class MyWindow(QtWidgets.QMainWindow):
     @pyqtSlot(np.ndarray)
     def update_image(self, cv_img):
         """Updates the image_label with a new opencv image"""
-        qt_img = self.convert_cv_qt(cv_img)
-        self.ui.CameraDisplay.setPixmap(qt_img)
+        if self.playCamera:
+            qt_img = self.convert_cv_qt(cv_img)
+            self.cameraScreenShot = qt_img
+            self.ui.CameraDisplay.setPixmap(qt_img)
 
     def convert_cv_qt(self, cv_img):
         """Convert from an opencv image to QPixmap"""
@@ -507,10 +527,94 @@ class MyWindow(QtWidgets.QMainWindow):
         self.thread.change_pixmap_signal.connect(self.update_image)
         self.thread.start()
 
+        if not self.playCamera:
+            self.toogleCamera()
+
     def closeEvent(self, event):
         """ Method called when the window is closed """
         self.thread.stop()
         event.accept()
+
+    def toogleCamera(self):
+        self.playCamera = not self.playCamera
+        text = ""
+        if self.playCamera:
+            text = 'Take Picture'
+        else:
+            text = 'Restore Camera'
+        self.ui.toogleCamera.setText(text)
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton & self.isPlacingCorner:
+            self.point = event.pos()
+            self.point = self.ui.CameraDisplay.mapFrom(
+                self.ui.centralwidget, event.pos())
+            # offset of 21 because the Widget centralWidget is not at 0,0 of the main window
+            self.point.setY(self.point.y() - 21)
+            self.corners[self.placingCorner] = self.point
+            self.updateRectLabels()
+            self.isPlacingCorner = False
+
+    def mouseMoveEvent(self, event):
+        if (event.buttons() & Qt.LeftButton) & self.drawing & self.globalDrawing & False:
+            painter = QPainter(self.cameraScreenShot)
+            painter.setPen(QPen(Qt.red, 3,
+                                Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin))
+            newPoint = self.ui.CameraDisplay.mapFrom(
+                self.ui.centralwidget, event.pos())
+            # offset of 21 because the Widget centralWidget is not at 0,0 of the main window
+            newPoint.setY(newPoint.y() - 21)
+            painter.drawLine(newPoint, self.point)
+            self.lastPoint = newPoint  # this is working fine now
+            self.ui.CameraDisplay.setPixmap(self.cameraScreenShot)
+
+    def mouseReleaseEvent(self, event):
+        if event.button == Qt.LeftButton & self.globalDrawing:
+            self.drawing = False
+            self.imageLabel.setPixmap(QPixmap.fromImage(self.cameraScreenShot))
+
+    def placeCorner(self, corner):
+        self.isPlacingCorner = True
+        self.placingCorner = corner
+
+    def updateRectLabels(self):
+        self.ui.cornerTLX.setText(str(self.corners['tl'].x()))
+        self.ui.cornerTLY.setText(str(self.corners['tl'].y()))
+        self.ui.cornerTRX.setText(str(self.corners['tr'].x()))
+        self.ui.cornerTRY.setText(str(self.corners['tr'].y()))
+        self.ui.cornerBLX.setText(str(self.corners['bl'].x()))
+        self.ui.cornerBLY.setText(str(self.corners['bl'].y()))
+
+    def resetRectangle(self):
+        self.corners = {
+            'tl': QPoint(0, 0),
+            'tr': QPoint(0, 0),
+            'bl': QPoint(0, 0),
+            'br': QPoint(0, 0)
+        }
+        self.updateRectLabels()
+
+    def drawRectangle(self):
+        if self.playCamera:
+            self.toogleCamera()
+
+        painter = QPainter(self.cameraScreenShot)
+        painter.setPen(QPen(Qt.red, 2,
+                            Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin))
+
+        newX = self.corners['bl'].x() - self.corners['tl'].x() + \
+            self.corners['tr'].x()
+        newY = self.corners['tr'].y() - self.corners['tl'].y() + \
+            self.corners['bl'].y()
+
+        self.corners["br"] = QPoint(newX, newY)
+
+        painter.drawLine(self.corners['tl'], self.corners['tr'])
+        painter.drawLine(self.corners['tr'], self.corners['br'])
+        painter.drawLine(self.corners['br'], self.corners['bl'])
+        painter.drawLine(self.corners['tl'], self.corners['bl'])
+
+        self.ui.CameraDisplay.setPixmap(self.cameraScreenShot)
 
 
 class VideoThread(QThread):
