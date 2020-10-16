@@ -126,7 +126,8 @@ class MyWindow(QtWidgets.QMainWindow):
 # =============================================================================
 
         self.playCamera = True
-        self.cameraScreenShot = ""
+        self.cameraScreenShot = QPixmap()
+        self.cameraScreenShotRef = QPixmap()
         self.initialiseCamera()
         self.display_width = self.ui.CameraDisplay.size().width()
         self.display_height = self.ui.CameraDisplay.size().height()
@@ -140,7 +141,7 @@ class MyWindow(QtWidgets.QMainWindow):
         self.placingCorner = None
 
         # create the video capture thread
-        self.thread = VideoThread(1)
+        self.thread = VideoThread(0)
         # connect its signal to the update_image slot
         self.thread.change_pixmap_signal.connect(self.update_image)
         # start the thread
@@ -502,10 +503,11 @@ class MyWindow(QtWidgets.QMainWindow):
     @pyqtSlot(np.ndarray)
     def update_image(self, cv_img):
         """Updates the image_label with a new opencv image"""
-        if self.playCamera:
-            qt_img = self.convert_cv_qt(cv_img)
-            self.cameraScreenShot = qt_img
-            self.ui.CameraDisplay.setPixmap(qt_img)
+
+        qt_img = self.convert_cv_qt(cv_img)
+        self.cameraScreenShot = qt_img
+        self.cameraScreenShotRef = qt_img.copy()
+        self.ui.CameraDisplay.setPixmap(qt_img)
 
     def convert_cv_qt(self, cv_img):
         """Convert from an opencv image to QPixmap"""
@@ -536,7 +538,13 @@ class MyWindow(QtWidgets.QMainWindow):
         event.accept()
 
     def toogleCamera(self):
+        if self.playCamera:
+            self.thread.pause()
+        else:
+            self.thread.resume()
+
         self.playCamera = not self.playCamera
+
         text = ""
         if self.playCamera:
             text = 'Take Picture'
@@ -593,6 +601,8 @@ class MyWindow(QtWidgets.QMainWindow):
             'br': QPoint(0, 0)
         }
         self.updateRectLabels()
+        self.ui.CameraDisplay.setPixmap(self.cameraScreenShotRef)
+        self.cameraScreenShot = self.cameraScreenShotRef.copy()
 
     def drawRectangle(self):
         if self.playCamera:
@@ -624,6 +634,7 @@ class VideoThread(QThread):
         super().__init__()
         self.running = True
         self.cam = cam
+        self.play = True
 
     change_pixmap_signal = pyqtSignal(np.ndarray)
 
@@ -631,15 +642,23 @@ class VideoThread(QThread):
         # capture from web cam
         cap = cv2.VideoCapture(self.cam, cv2.CAP_DSHOW)
         while self.running:
-            ret, cv_img = cap.read()
-            if ret:
-                # Send the image thru a slot to MyWindow.update_image
-                self.change_pixmap_signal.emit(cv_img)
+            while self.play:
+                ret, cv_img = cap.read()
+                if ret:
+                    # Send the image thru a slot to MyWindow.update_image
+                    self.change_pixmap_signal.emit(cv_img)
 
     def stop(self):
         """Sets run flag to False and waits for thread to finish"""
+        self.play = False
         self.running = False
         self.wait()
+
+    def pause(self):
+        self.play = False
+
+    def resume(self):
+        self.play = True
 
 
 if __name__ == '__main__':
