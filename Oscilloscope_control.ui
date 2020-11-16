@@ -1026,7 +1026,7 @@
      <widget class="QComboBox" name="CameraSelect">
       <property name="geometry">
        <rect>
-        <x>440</x>
+        <x>190</x>
         <y>20</y>
         <width>69</width>
         <height>22</height>
@@ -1036,10 +1036,10 @@
      <widget class="QLabel" name="CameraDisplay">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>10</x>
         <y>50</y>
-        <width>211</width>
-        <height>161</height>
+        <width>351</width>
+        <height>251</height>
        </rect>
       </property>
       <property name="mouseTracking">
@@ -1067,7 +1067,7 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>360</x>
+        <x>120</x>
         <y>10</y>
         <width>71</width>
         <height>41</height>
@@ -1080,8 +1080,8 @@
      <widget class="QPushButton" name="toogleCamera">
       <property name="geometry">
        <rect>
-        <x>370</x>
-        <y>220</y>
+        <x>70</x>
+        <y>310</y>
         <width>91</width>
         <height>23</height>
        </rect>
@@ -1096,8 +1096,8 @@
      <widget class="QGroupBox" name="groupBox">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>250</y>
+        <x>10</x>
+        <y>340</y>
         <width>201</width>
         <height>121</height>
        </rect>
@@ -1350,6 +1350,74 @@
        </property>
        <property name="text">
         <string>Draw rectangle</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>340</y>
+        <width>151</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>jsp</string>
+      </property>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Resolution (mm)</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="CalibrateCam">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Calibrate</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="AttackResolution">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>50</y>
+         <width>51</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="StartAttack">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>80</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Start Attack</string>
        </property>
       </widget>
      </widget>
