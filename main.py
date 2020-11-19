@@ -141,8 +141,18 @@ class MyWindow(QtWidgets.QMainWindow):
         self.placingCorner = None
         
         # Calibrate
+        self.calibrated = False
         self.isPlacingCalibrate = False
         self.cornerCalibrateNumber = 0
+        
+        # Homography
+        self.homography = None
+        self.ptsDst = np.array([
+            [0,0],
+            [self.display_width-1,0],
+            [self.display_width-1,self.display_height-1],
+            [0,self.display_height-1]
+        ])
         
         # Attack
         self.ui.AttackResolution.setValue(1)
@@ -174,6 +184,9 @@ class MyWindow(QtWidgets.QMainWindow):
             'br': QPoint(-1, -1)
         }
         self.cornerNames = ['tl','tr','br','bl']
+        
+        self.originHeight = 1
+        self.originWidth = 1
         
         
 
@@ -535,8 +548,15 @@ class MyWindow(QtWidgets.QMainWindow):
     @pyqtSlot(np.ndarray)
     def update_image(self, cv_img):
         """Updates the image_label with a new opencv image"""
-
-        qt_img = self.convert_cv_qt(cv_img)
+        
+        self.originHeight, self.originWidth, z = cv_img.shape # Used for scaled images
+        
+        if self.calibrated:
+            hm_img = cv2.warpPerspective(cv_img, self.homography, (self.display_width,self.display_height))
+            qt_img = self.convert_cv_qt(hm_img)
+            
+        else: 
+            qt_img = self.convert_cv_qt(cv_img)
         self.cameraScreenShot = qt_img
         self.cameraScreenShotRef = qt_img.copy()
         self.ui.CameraDisplay.setPixmap(qt_img)
@@ -592,6 +612,7 @@ class MyWindow(QtWidgets.QMainWindow):
                 self.ui.centralwidget, event.pos())
             # offset of 21 because the Widget centralWidget is not at 0,0 of the main window
             self.point.setY(self.point.y() - 21)
+            print(self.point)
             
             if self.isPlacingCorner:    # Define processor location
                 self.corners[self.placingCorner] = self.point
@@ -601,12 +622,26 @@ class MyWindow(QtWidgets.QMainWindow):
             if self.isPlacingCalibrate: # Calibrate Camera
                 self.calibrationCorners[self.cornerNames[self.cornerCalibrateNumber]] = self.point
                 self.cornerCalibrateNumber += 1
+                                
+                
                 if self.cornerCalibrateNumber == 4:
                     self.drawRectangle(self.calibrationCorners, Qt.yellow)
                     self.isPlacingCalibrate = False
                     self.ui.CalibrateCam.setText("Re-calibrate")
+                    self.calibrated = True
                     self.ui.StartAttack.setEnabled(True)
-                
+                    
+                    # Homography's parameters
+                    ptsSrc = []
+                    for key, item in self.calibrationCorners.items():
+                        ptsSrc.append(
+                            [int(item.x()*self.originHeight/self.display_height),
+                             int(item.y()*self.originWidth/self.display_width)])
+                        
+                    point = ptsSrc.pop(2)
+                    ptsSrc.append(point)
+                    ptsSrc = np.array(ptsSrc)
+                    self.homography, status = cv2.findHomography(ptsSrc,self.ptsDst)
 
     def placeCorner(self, corner):
         self.isPlacingCorner = True
@@ -656,6 +691,8 @@ class MyWindow(QtWidgets.QMainWindow):
         self.toogleCamera(True)
         self.ui.CameraDisplay.setPixmap(self.cameraScreenShotRef)
         self.cameraScreenShot = self.cameraScreenShotRef.copy()
+        
+        self.calibrated = False
         
         self.calibrationCorners = {
             'tl': QPoint(-1, -1),
@@ -708,6 +745,8 @@ class VideoThread(QThread):
     def resume(self):
         self.play = True
 
+  
+    
 
 if __name__ == '__main__':
     test = 0

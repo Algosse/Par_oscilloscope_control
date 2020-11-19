@@ -353,7 +353,7 @@ class Ui_MainWindow(object):
         self.CameraSelect.setGeometry(QtCore.QRect(190, 20, 69, 22))
         self.CameraSelect.setObjectName("CameraSelect")
         self.CameraDisplay = QtWidgets.QLabel(self.CR_tab)
-        self.CameraDisplay.setGeometry(QtCore.QRect(10, 50, 351, 251))
+        self.CameraDisplay.setGeometry(QtCore.QRect(10, 50, 341, 251))
         self.CameraDisplay.setMouseTracking(True)
         self.CameraDisplay.setAutoFillBackground(False)
         self.CameraDisplay.setStyleSheet("")
