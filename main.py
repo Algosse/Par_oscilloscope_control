@@ -12,6 +12,7 @@ from PyQt5 import QtWidgets, QtCore
 from PyQt5 import QtGui
 from PyQt5.QtGui import QPixmap, QPainter, QPen
 from PyQt5.QtCore import pyqtSignal, pyqtSlot, Qt, QThread, QPoint
+import PyQt5
 import cv2
 import numpy as np
 
@@ -161,8 +162,8 @@ class MyWindow(QtWidgets.QMainWindow):
         self.ui.StartAttack.setEnabled(False)
         
         # Printer caracteristics (cm)
-        self.printerHeight = 20
-        self.printerWidth = 20
+        self.printerHeight = 5
+        self.printerWidth = 5
 
         # create the video capture thread
         self.thread = VideoThread(0)
@@ -190,10 +191,19 @@ class MyWindow(QtWidgets.QMainWindow):
             ptsSrc = np.array(ptsSrc)
             self.homography, status = cv2.findHomography(ptsSrc,self.ptsDst)
             self.calibrated = True
+            self.ui.StartAttack.setEnabled(True)
         except:
             print('Aucune calibration chargée')
         
         self.cornerNames = ['tl','tr','br','bl']
+        
+        try:
+            with open('position.dat', 'r') as f:
+                self.corners = eval(f.read())
+                print(self.corners)
+                self.updateRectLabels()
+        except:
+            print('Aucune calibration chargée')
         
         self.originHeight = 1
         self.originWidth = 1
@@ -628,6 +638,7 @@ class MyWindow(QtWidgets.QMainWindow):
                 self.corners[self.placingCorner] = self.point
                 self.updateRectLabels()
                 self.isPlacingCorner = False
+                print(self.corners)
                 with open('position.dat', 'w') as f:
                     f.write(str(self.corners))
             
@@ -637,9 +648,9 @@ class MyWindow(QtWidgets.QMainWindow):
                                 
                 
                 if self.cornerCalibrateNumber == 4:
-                    self.drawRectangle(self.calibrationCorners, Qt.yellow)
+                    #self.drawRectangle(self.calibrationCorners, Qt.yellow)
                     self.isPlacingCalibrate = False
-                    self.ui.CalibrateCam.setText("Re-calibrate")
+                    self.ui.CalibrateCam.setText("calibrate")
                     self.calibrated = True
                     self.ui.StartAttack.setEnabled(True)
                     
@@ -691,18 +702,23 @@ class MyWindow(QtWidgets.QMainWindow):
         painter.setPen(QPen(color, 2,
                             Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin))
 
-        if rectangle['br'] == QPoint(0,0):
-            newX = rectangle['bl'].x() - rectangle['tl'].x() + \
-                rectangle['tr'].x()
-            newY = rectangle['tr'].y() - rectangle['tl'].y() + \
-                rectangle['bl'].y()
+        
+        newX = rectangle['bl'].x() - rectangle['tl'].x() + \
+            rectangle['tr'].x()
+        newY = rectangle['tr'].y() - rectangle['tl'].y() + \
+            rectangle['bl'].y()
 
-            rectangle['br'] = QPoint(newX, newY)
+        rectangle['br'] = QPoint(newX, newY)
+        
+        with open('position.dat', 'w') as f:
+                    f.write(str(rectangle))
 
         painter.drawLine(rectangle['tl'], rectangle['tr'])
         painter.drawLine(rectangle['tr'], rectangle['br'])
         painter.drawLine(rectangle['br'], rectangle['bl'])
         painter.drawLine(rectangle['tl'], rectangle['bl'])
+        
+        print(rectangle)
 
         self.ui.CameraDisplay.setPixmap(self.cameraScreenShot)
     
