@@ -5,7 +5,7 @@ import os
 import visa
 import Oscilloscope_control as ui_osc
 import time
-from Utils import ui_test
+from Utils import ui_test, dictionnary_operation as dic
 from Acq_script import nucleo_acquisition
 from Acq_script import test_acquisition
 from PyQt5 import QtWidgets, QtCore
@@ -160,9 +160,9 @@ class MyWindow(QtWidgets.QMainWindow):
         self.ui.AttackResolution.setSingleStep(0.1)
         self.ui.StartAttack.setEnabled(False)
         
-        # Printer caracteristics
-        self.printerHeigh = 100
-        self.printerWidth = 100
+        # Printer caracteristics (cm)
+        self.printerHeight = 20
+        self.printerWidth = 20
 
         # create the video capture thread
         self.thread = VideoThread(0)
@@ -183,6 +183,16 @@ class MyWindow(QtWidgets.QMainWindow):
             'bl': QPoint(-1, -1),
             'br': QPoint(-1, -1)
         }
+        try:
+            with open('calibration.dat', 'r') as f:
+                ptsSrc = eval(f.read())
+            print(ptsSrc)
+            ptsSrc = np.array(ptsSrc)
+            self.homography, status = cv2.findHomography(ptsSrc,self.ptsDst)
+            self.calibrated = True
+        except:
+            print('Aucune calibration chargée')
+        
         self.cornerNames = ['tl','tr','br','bl']
         
         self.originHeight = 1
@@ -595,7 +605,7 @@ class MyWindow(QtWidgets.QMainWindow):
             self.playCamera = False
         else:
             self.thread.resume()
-            self.playCamera = True        
+            self.playCamera = True
 
         text = ""
         if self.playCamera:
@@ -618,6 +628,8 @@ class MyWindow(QtWidgets.QMainWindow):
                 self.corners[self.placingCorner] = self.point
                 self.updateRectLabels()
                 self.isPlacingCorner = False
+                with open('position.dat', 'w') as f:
+                    f.write(str(self.corners))
             
             if self.isPlacingCalibrate: # Calibrate Camera
                 self.calibrationCorners[self.cornerNames[self.cornerCalibrateNumber]] = self.point
@@ -640,8 +652,16 @@ class MyWindow(QtWidgets.QMainWindow):
                         
                     point = ptsSrc.pop(2)
                     ptsSrc.append(point)
+                    
+                    # Export
+                    with open('calibration.dat', 'w') as f:
+                        f.write(str(ptsSrc))
+                    
                     ptsSrc = np.array(ptsSrc)
                     self.homography, status = cv2.findHomography(ptsSrc,self.ptsDst)
+                    
+                    self.toogleCamera()
+                    
 
     def placeCorner(self, corner):
         self.isPlacingCorner = True
@@ -677,7 +697,7 @@ class MyWindow(QtWidgets.QMainWindow):
             newY = rectangle['tr'].y() - rectangle['tl'].y() + \
                 rectangle['bl'].y()
 
-            rectangle["br"] = QPoint(newX, newY)
+            rectangle['br'] = QPoint(newX, newY)
 
         painter.drawLine(rectangle['tl'], rectangle['tr'])
         painter.drawLine(rectangle['tr'], rectangle['br'])
@@ -708,8 +728,17 @@ class MyWindow(QtWidgets.QMainWindow):
         
     def startAttack(self):
         print('start')
+        # Importing data for attack
         resolution = self.ui.AttackResolution.value()
-        print(resolution)
+        try:
+            with open('position.dat', 'r') as f:
+                position = eval(f.read())
+            # Changing scale (verify if same coordinate system)
+            for key, item in position.items():
+                position[key] = (item.x() * self.printerWidth / self.display_width, item.y() * self.printerHeight / self.display_height)
+            print(position)
+        except:
+            print('Donnée(s) manquantes')
         
         
 class VideoThread(QThread):
