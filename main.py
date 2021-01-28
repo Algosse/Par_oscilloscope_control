@@ -154,7 +154,7 @@ class MyWindow(QtWidgets.QMainWindow):
             [0,self.display_height-1]
         ])
         
-        # Attack
+        # Resolution of the Attack 
         self.ui.AttackResolution.setValue(1)
         self.ui.AttackResolution.setMinimum(0.1)
         self.ui.AttackResolution.setSingleStep(0.1)
