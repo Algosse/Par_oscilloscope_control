@@ -15,6 +15,7 @@ from PyQt5.QtCore import pyqtSignal, pyqtSlot, Qt, QThread, QPoint
 import PyQt5
 import cv2
 import numpy as np
+import communication_serie
 
 
 class MyWindow(QtWidgets.QMainWindow):
@@ -35,6 +36,7 @@ class MyWindow(QtWidgets.QMainWindow):
 #   Variables
 # =============================================================================
         self.oscilloscope = None
+        self.communication_printer = None # objet qui va gérer la communication avec l'imprimante (instanciation de la classe communication_serie
 # =============================================================================
 #   other initialization
 # =============================================================================
@@ -226,7 +228,35 @@ class MyWindow(QtWidgets.QMainWindow):
         self.ui.DrawRectangle.clicked.connect(lambda : self.drawRectangle(self.corners))
         self.ui.CalibrateCam.clicked.connect(self.calibrateCam)
         self.ui.StartAttack.clicked.connect(self.startAttack)
+ 
+# =============================================================================
+#   Printer connexion
+# =============================================================================
+
+        self.ui.printer_connexion.clicked.connect(self.connexion_printer)
+        self.ui.printer_disconnexion.clicked.connect(self.disconnexion_printer)
+        self.ui.goto_coord.clicked.connect(self.goto)
+        self.ui.send_gcode.clicked.connect(self.send_gcode)
+
+# =============================================================================
+#   Functions printer
+# =============================================================================
+
+    def connexion_printer(self):
+        if self.communication_printer==None:
+            self.communication_printer=communication_serie.communication_serie('COM4',250000)
+    
+    def disconnexion_printer(self):
+        if self.communication_printer!=None:
+            self.communication_printer.disconnect()
+            self.communication_printer=None
         
+    def goto(self):
+        self.communication_printer.sendxyz(self.ui.recup_X.text(),self.ui.recup_Y.text(),self.ui.recup_Z.text())
+
+    def send_gcode(self):
+        self.communication_printer.send(self.ui.recup_gcode.text())
+ 
 # =============================================================================
 #   Functions
 # =============================================================================
@@ -607,6 +637,7 @@ class MyWindow(QtWidgets.QMainWindow):
     def closeEvent(self, event):
         """ Method called when the window is closed """
         self.thread.stop()
+        self.disconnexion_printer()
         event.accept()
 
     def toogleCamera(self, pause = False):
@@ -752,6 +783,7 @@ class MyWindow(QtWidgets.QMainWindow):
             # Changing scale (verify if same coordinate system)
             for key, item in position.items():
                 position[key] = (item.x() * self.printerWidth / self.display_width, self.printerHeight - item.y() * self.printerHeight / self.display_height)
+                self.communication_printer.sendxyz(str(int(position[key][0])),str(int(position[key][1])),str(20))
             print(position)
         except:
             print('Donnée(s) manquantes')
