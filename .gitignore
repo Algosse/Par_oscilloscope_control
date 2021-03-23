@@ -3,3 +3,5 @@ Dictionnaires/
 Utils/
 __pycache__/
 .vscode/
+calibration.dat
+position.dat
