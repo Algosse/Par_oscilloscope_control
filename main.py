@@ -161,9 +161,9 @@ class MyWindow(QtWidgets.QMainWindow):
         self.ui.AttackResolution.setSingleStep(0.1)
         self.ui.StartAttack.setEnabled(False)
         
-        # Printer caracteristics (cm)
-        self.printerHeight = 5
-        self.printerWidth = 5
+        # Printer caracteristics (mm)
+        self.printerHeight = 200
+        self.printerWidth = 200
 
         # create the video capture thread
         self.thread = VideoThread(0)
@@ -751,7 +751,7 @@ class MyWindow(QtWidgets.QMainWindow):
                 position = eval(f.read())
             # Changing scale (verify if same coordinate system)
             for key, item in position.items():
-                position[key] = (item.x() * self.printerWidth / self.display_width, item.y() * self.printerHeight / self.display_height)
+                position[key] = (item.x() * self.printerWidth / self.display_width, self.printerHeight - item.y() * self.printerHeight / self.display_height)
             print(position)
         except:
             print('Donnée(s) manquantes')
