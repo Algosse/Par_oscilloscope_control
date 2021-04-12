@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
+#attention, vérifier le port COM de connexion à l'imprimante ainsi que le baudrate, et les changer dans l'instanciation de la classe communication_serie si nécessaire
+#(partie Functions printer (PAr123) ligne 243)
 
 import sys
 import os
 import visa
-import Oscilloscope_control as ui_osc
+import Oscilloscope_control as ui_osc #fichier où est créé l'ui
 import time
 from Utils import ui_test, dictionnary_operation as dic
 from Acq_script import nucleo_acquisition
@@ -15,7 +17,7 @@ from PyQt5.QtCore import pyqtSignal, pyqtSlot, Qt, QThread, QPoint
 import PyQt5
 import cv2
 import numpy as np
-import communication_serie
+import communication_serie #bibliothèque écrite par le PAr123
 
 
 class MyWindow(QtWidgets.QMainWindow):
@@ -161,6 +163,7 @@ class MyWindow(QtWidgets.QMainWindow):
         self.ui.AttackResolution.setValue(1)
         self.ui.AttackResolution.setMinimum(0.1)
         self.ui.AttackResolution.setSingleStep(0.1)
+        self.ui.AttackResolution.setDecimals(1)
         self.ui.StartAttack.setEnabled(False)
         
         # Printer caracteristics (mm)
@@ -213,7 +216,7 @@ class MyWindow(QtWidgets.QMainWindow):
         
 
 # =============================================================================
-#   Circuit Recognition Connections
+#   Circuit Recognition Connections (PAr122)
 # =============================================================================
 
         self.ui.CameraSelect.currentIndexChanged.connect(self.changeCam)
@@ -230,21 +233,42 @@ class MyWindow(QtWidgets.QMainWindow):
         self.ui.StartAttack.clicked.connect(self.startAttack)
  
 # =============================================================================
-#   Printer connexion
+#   Printer connexion (PAr123) : ui settings
 # =============================================================================
 
         self.ui.printer_connexion.clicked.connect(self.connexion_printer)
         self.ui.printer_disconnexion.clicked.connect(self.disconnexion_printer)
         self.ui.goto_coord.clicked.connect(self.goto)
         self.ui.send_gcode.clicked.connect(self.send_gcode)
+        self.ui.ApproachButton.clicked.connect(self.approach)
+        
+        self.ui.recup_X.setValue(0.0)
+        self.ui.recup_X.setMinimum(-100.0)
+        self.ui.recup_X.setMaximum(100.0)
+        self.ui.recup_X.setSingleStep(0.1)
+        self.ui.recup_X.setDecimals(1)
+        
+        self.ui.recup_Y.setValue(0.0)
+        self.ui.recup_Y.setMinimum(-100.0)
+        self.ui.recup_Y.setMaximum(100.0)
+        self.ui.recup_Y.setSingleStep(0.1)
+        self.ui.recup_Y.setDecimals(1)
+        
+        self.ui.recup_Z.setValue(0.0)
+        self.ui.recup_Z.setMinimum(-100.0)
+        self.ui.recup_Z.setMaximum(100.0)
+        self.ui.recup_Z.setSingleStep(0.1)
+        self.ui.recup_Z.setDecimals(1)
 
 # =============================================================================
-#   Functions printer
+#   Functions printer (PAr123)
 # =============================================================================
 
     def connexion_printer(self):
         if self.communication_printer==None:
             self.communication_printer=communication_serie.communication_serie('COM4',250000)
+            time.sleep(1)
+            self.communication_printer.send('G28')
     
     def disconnexion_printer(self):
         if self.communication_printer!=None:
@@ -252,7 +276,11 @@ class MyWindow(QtWidgets.QMainWindow):
             self.communication_printer=None
         
     def goto(self):
-        self.communication_printer.sendxyz(self.ui.recup_X.text(),self.ui.recup_Y.text(),self.ui.recup_Z.text())
+        self.communication_printer.send('G91')
+        time.sleep(0.1)
+        self.communication_printer.sendxyz(str(self.ui.recup_X.value()),str(self.ui.recup_Y.value()),str(self.ui.recup_Z.value()))
+        time.sleep(0.1)
+        self.communication_printer.send('G90')
 
     def send_gcode(self):
         self.communication_printer.send(self.ui.recup_gcode.text())
@@ -782,9 +810,29 @@ class MyWindow(QtWidgets.QMainWindow):
                 position = eval(f.read())
             # Changing scale (verify if same coordinate system)
             for key, item in position.items():
-                position[key] = (item.x() * self.printerWidth / self.display_width, self.printerHeight - item.y() * self.printerHeight / self.display_height)
-                self.communication_printer.sendxyz(str(int(position[key][0])),str(int(position[key][1])),str(20))
+                position[key] = (round(item.x() * self.printerWidth / self.display_width,1), round(self.printerHeight - item.y() * self.printerHeight / self.display_height,1))
             print(position)
+            # attack matrice
+            taille_x=int(abs(position['tr'][0]-position['tl'][0])/resolution)
+            taille_y=int(abs(position['tl'][1]-position['bl'][1])/resolution)
+            x=[round(position['tl'][0]+i*resolution,1) for i in range(taille_x)]
+            y=[round(position['tl'][1]-i*resolution,1) for i in range(taille_y)]
+            for i in x:
+                self.communication_printer.send('G0 X'+str(i)+' Y'+str(round(position['tl'][1],1)))
+                time.sleep(1)
+                for j in y:
+                    self.communication_printer.send('G0 Y'+str(j))
+                    time.sleep(1)
+        except:
+           print('Donnée(s) manquantes')
+    
+    def approach(self):
+        try:
+            with open('position.dat', 'r') as f:
+                position = eval(f.read())
+            # Changing scale (verify if same coordinate system)
+            position['tl'] = (round(position['tl'].x() * self.printerWidth / self.display_width,1), round(self.printerHeight - position['tl'].y() * self.printerHeight / self.display_height,1))
+            self.communication_printer.sendxyz(str(position['tl'][0]),str(position['tl'][1]),str(20))
         except:
             print('Donnée(s) manquantes')
         

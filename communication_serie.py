@@ -1,3 +1,18 @@
+"""
+Ce fichier est une bibliothèque écrite dans le cadre du PAr123 à l'Ecole Centrale de Lyon (année 2020/2021) et portant sur la réalisation d'une interface permettant de mener de façon automatique des attaques par canaux
+electromagnétiques à l'aide d'une imprimante 3D.
+Il contient la classe communication_serie écrite pour la gestion de la communication série avec l'imprimante 3D.
+Le fonctionnement général est le suivant : à l'instanciation (après avoir branché l'imprimante et vérifié que le port est le bon) on crée deux threads qui vont fonctionner
+en parallèle : un thread d'envoie de commandes à l'imprimante (il va pointer sur _sender qui va envoyer les commandes rajoutées à la file self.queue) et un thread de lecture
+des retours de l'imprimante, qui sera in fine utile principalement pour le debbuging (pour s'assurer que l'imprimante est bien connectée par exemple).
+
+Ce fichier est utilisé (importé) par la suite dans le main.py qui rassemble les fonctions utilisées par l'interface graphique (crée dans le fichier Oscilloscope_control.py). 
+
+L'écriture de ce fichier s'est inspirée des codes open source du logiciel d'impression 3D Printrun.
+
+Dimitri Le Foll, mars 2021
+"""
+
 from serial import Serial, PARITY_ODD, PARITY_NONE # documentation : https://pyserial.readthedocs.io/en/latest/pyserial_api.html
 from queue import Queue, Empty as QueueEmpty # documentation : https://docs.python.org/fr/3/library/queue.html
 import threading #un thread est un fil d'exécution (objet Thread) qui permet la mise en parallèle de plusieurs processus. On lui passe en argument un objet appelable (une fonction par exemple) que la méthode
@@ -169,7 +184,7 @@ class communication_serie():
             print("pas connecté à l'imprimante")
 
 
-    def sendxyz(self,x,y,z): #G0 X10 Y10 Z10 par exemple pour aller en (10,10,10). Le codage de l'UX obligera forcément à renvoyer un triplet, meme si certains sont à None
+    def sendxyz(self,x,y,z): #G0 X10 Y10 Z10 par exemple pour aller en (10,10,10). Le codage de l'UX obligera forcément à renvoyer un triplet d'Int
     #si la case x de l'UX n'est pas remplie, alors x="". x,y,z sont directement récupérés en str par l'ui
         x=" X"+x
         y=" Y"+y
@@ -179,8 +194,3 @@ class communication_serie():
             self.queue.put_nowait(command)
         else:
             print("pas connecté à l'imprimante")
-        
-    
- #reste à implémenter   
-    def parcours_du_composant(self,l,L,pas): #on met manuellement la pointe au coin du composant à analyser. On doit connaitre sa longueur, sa largeur et le pas (tout en mm)
-        pass
